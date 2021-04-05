@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  dbexplorer-db-prod:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: dbexplorer-db-prod
+    volumes:
+      - /var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=docker
+    restart: unless-stopped
+  db-explorer-server:
+    image: db-explorer-server:1
+    network_mode: bridge
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+      - /data/springboot-docker-compose
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    depends_on:
+      - dbexplorer-db-prod
+    links:
+      - dbexplorer-db-prod

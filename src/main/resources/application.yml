@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://dbexplorer-db-prod:5432/postgres
+    username: postgres
+    password: docker
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: db_explorer
+    hibernate:
+      ddl-auto: none
+  flyway:
+    schemas: db_explorer
+
+db-explorer:
+  max-connection-pool: 5
+  database-cache:
+    expiry: 10s

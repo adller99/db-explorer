@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "585648d6-d3e8-4fea-af6f-49995d090f56",
+		"name": "Ataccama",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list databases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/database/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/database/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update database",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"playground123\",\n    \"hostname\": \"192.168.0.227\",\n    \"port\": 5433,\n    \"databaseName\": \"postgres\",\n    \"username\": \"postgres\",\n    \"password\": \"docker\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/database/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list schemas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/database/browse/1/schemas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						"browse",
+						"1",
+						"schemas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list tables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/database/browse/1/playground/tables",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						"browse",
+						"1",
+						"playground",
+						"tables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/database/browse/1/playground/customer_details/data",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						"browse",
+						"1",
+						"playground",
+						"customer_details",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list tabase details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/database/browse/1/playground/customer_details/details",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						"browse",
+						"1",
+						"playground",
+						"customer_details",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "column statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/database/statistics/column/1/playground/customer/id/median",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						"statistics",
+						"column",
+						"1",
+						"playground",
+						"customer",
+						"id",
+						"median"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "table statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/database/statistics/table/1/playground/customer_details/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"database",
+						"statistics",
+						"table",
+						"1",
+						"playground",
+						"customer_details",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

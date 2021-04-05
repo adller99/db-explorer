@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  playground:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: dbexplorer-playground
+    volumes:
+      - /var/lib/postgresql/data
+      - ./playground-schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./playground-data.sql:/docker-entrypoint-initdb.d/2-data.sql
+    expose:
+      - 5433
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=docker
+    restart: unless-stopped

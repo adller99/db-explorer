@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  dbexplorer-db:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: dbexplorer-db
+    volumes:
+      - /var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=docker
+    restart: unless-stopped
